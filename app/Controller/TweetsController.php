@@ -6,10 +6,8 @@ class TweetsController extends AppController {
 
     public $components = [
         'Paginator' => [
-            'Tweet' => [
-                'limit' => 10,
-                'order' => ['created' => 'desc'],
-            ],
+            'limit' => 10,
+            'order' => ['created' => 'desc'],
         ],
     ];
 
@@ -129,7 +127,9 @@ class TweetsController extends AppController {
 
     // ユーザープロフィールページ
     public function account() {
-        $tweets = $this->Paginator->paginate();
+        $conditions = ['Tweet.user_id' => $this->Auth->user('id')];
+        $tweets = $this->paginate($conditions);
+        // $tweets = $this->paginate();
         // ビューに全てのツイートを渡す
         $this->set('tweets', $tweets);
     }
