@@ -1,5 +1,4 @@
-CREATE DATABASE `cakephp_twitter`;
-
+CREATE DATABASE `cakephp_twitter` DEFAULT CHARACTER SET utf8;;
 use cakephp_twitter
 
 -- usersテーブル作成
@@ -26,6 +25,13 @@ ALTER TABLE `users` MODIFY `photo_dir` varchar(255) DEFAULT NULL;
 -- 管理者ユーザー作成 // ここではパスワードを"sample"とｓる
 INSERT INTO `users` (`email`, `name`, `photo`, `photo_dir`, `password`, `role`, `body`)
     VALUES ("admin@mail.com", "Administrator", "管理者.png", "1", "$2a$10$UE.ilc/yVqAxh/tuW0Z.OOIt6QeU3L/jn/NjVqLdQaiFd0PdSamBi", "admin", "すべての編集・削除権限を有する管理者");
+
+INSERT INTO `users` (`email`, `name`, `photo`, `photo_dir`, `role`)
+    VALUES ("hoge@hoge.com", "hogehoge", "Twitter_icon3.png", "2", "author");
+INSERT INTO `users` (`email`, `name`, `photo`, `photo_dir`, `role`)
+    VALUES ("huga@huga.com", "hugahuga", "Twitter_icon.png", "3", "author");
+INSERT INTO `users` (`email`, `name`, `photo`, `photo_dir`, `role`)
+    VALUES ("iizawa@mail.com", "iizawa", "Twitter_icon2.png", "4", "author");
 
 
 -- tweetsテーブル作成
