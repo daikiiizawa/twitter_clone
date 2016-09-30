@@ -1,50 +1,18 @@
-# CakePHP
+# Twitterクローン 
 
-[![Latest Stable Version](https://poser.pugx.org/cakephp/cakephp/v/stable.svg)](https://packagist.org/packages/cakephp/cakephp)
-[![License](https://poser.pugx.org/cakephp/cakephp/license.svg)](https://packagist.org/packages/cakephp/cakephp)
-[![Bake Status](https://secure.travis-ci.org/cakephp/cakephp.png?branch=master)](http://travis-ci.org/cakephp/cakephp)
-[![Code consistency](http://squizlabs.github.io/PHP_CodeSniffer/analysis/cakephp/cakephp/grade.svg)](http://squizlabs.github.io/PHP_CodeSniffer/analysis/cakephp/cakephp/)
+## 開発環境
+* 使用言語: PHP5.6
+* 使用環境: CakePHP2.8系
+* デザイン: BootStrap3) 
+* レイアウト: BootStrapのグリッドデザインをベースとし、PCとスマートフォンで閲覧可能
 
-[![CakePHP](http://cakephp.org/img/cake-logo.png)](http://www.cakephp.org)
-
-CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC.
-Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.
-
-
-## Some Handy Links
-
-[CakePHP](http://www.cakephp.org) - The rapid development PHP framework
-
-[CookBook](http://book.cakephp.org) - THE CakePHP user documentation; start learning here!
-
-[API](http://api.cakephp.org) - A reference to CakePHP's classes
-
-[Plugins](http://plugins.cakephp.org/) - A repository of extensions to the framework
-
-[The Bakery](http://bakery.cakephp.org) - Tips, tutorials and articles
-
-[Community Center](http://community.cakephp.org) - A source for everything community related
-
-[Training](http://training.cakephp.org) - Join a live session and get skilled with the framework
-
-[CakeFest](http://cakefest.org) - Don't miss our annual CakePHP conference
-
-[Cake Software Foundation](http://cakefoundation.org) - Promoting development related to CakePHP
-
-
-## Get Support!
-
-[#cakephp](http://webchat.freenode.net/?channels=#cakephp) on irc.freenode.net - Come chat with us, we have cake
-
-[Google Group](https://groups.google.com/group/cake-php) - Community mailing list and forum
-
-[GitHub Issues](https://github.com/cakephp/cakephp/issues) - Got issues? Please tell us!
-
-[Roadmaps](https://github.com/cakephp/cakephp/wiki#roadmaps) - Want to contribute? Get involved!
-
-
-## Contributing
-
-[CONTRIBUTING.md](CONTRIBUTING.md) - Quick pointers for contributing to the CakePHP project
-
-[CookBook "Contributing" Section (2.x)](http://book.cakephp.org/2.0/en/contributing.html) [(3.0)](http://book.cakephp.org/3.0/en/contributing.html) - Version-specific details about contributing to the project
+## 開発手順
+1. データベースの作成とテーブル定義を行う。
+2. UsersControllerを作成し、ユーザー認証(ログイン/ログアウト/新規登録)を行えるよう機能実装する。
+3. TweetsControllerを作成し、ツイートの一覧、詳細機能・編集・削除を実装する。
+4. TweetsControllerの中に、ツイートを投稿できる機能を実装する。
+5. TweetsControllerの中に、ツイートに対し返信を投稿できる機能を実装する。その上でツイートの一覧ビューに「返信」リンクを付ける。
+6. TweetsControllerの中に、ツイートに対しお気に入りをつけることができる機能、およびお気に入りに登録した人の一覧を閲覧できる機能 を実装する。その上でツイートの一覧ビューに「お気に入り」リンクをつけ、その横に(3「)」というようにカッコ内にお気に入りの数を表示さ せる。
+7. UsersControllerの中に、ユーザーのプロフィール閲覧・およびそのユーザーのツイート一覧を閲覧できる機能を実装する。
+8. UsersControllerの中に、現在ログイン中のユーザーにおける登録情報(メールアドレス・パスワード・プロフィール画像・プロフィール文) を編集することができる機能を実装する。
+9. すべての編集・削除ができる管理者ユーザーを1人作成する
