@@ -28,6 +28,7 @@ class TweetsController extends AppController {
     }
 
     public function index() {
+        $this->set('title_for_layout', '一覧画面');
         // 全データを渡す
         $tweets = $this->Paginator->paginate('Tweet');
 
@@ -54,6 +55,7 @@ class TweetsController extends AppController {
     }
 
     public function find() {
+        $this->set('title_for_layout', '検索画面');
         if ($this->request->data) {
             $search = $this->request->data['Tweet']['search'];
             $conditions = array('Tweet.content LIKE' => "%{$search}%");
@@ -66,6 +68,7 @@ class TweetsController extends AppController {
     }
 
     public function view($id = null) {
+        $this->set('title_for_layout', '詳細画面');
         if (!$this->Tweet->exists($id)) {
             throw new NotFoundException('ツイートがみつかりません');
         }
@@ -100,6 +103,7 @@ class TweetsController extends AppController {
     }
 
     public function edit($id = null) {
+        $this->set('title_for_layout', '編集画面');
         if (!$this->Tweet->exists($id)) {
             throw new NotFoundException('投稿がみつかりません');
         }
@@ -109,11 +113,10 @@ class TweetsController extends AppController {
                 return $this->redirect(['action' => 'view',$id]);
             }
         } else {
-            $edittweet = $this->Tweet->findById($id);
-            $this->set('edittweet', $edittweet);
+            $this->request->data = $this->Tweet->findById($id);
         }
 
-        $this->set('id', $id);
+        $this->set('id', null);
     }
 
     public function delete($id = null) {
@@ -129,6 +132,7 @@ class TweetsController extends AppController {
 
     // ユーザープロフィールページ
     public function account() {
+        $this->set('title_for_layout', 'マイページ');
         $conditions = ['Tweet.user_id' => $this->Auth->user('id')];
         $tweets = $this->paginate($conditions);
         // $tweets = $this->paginate();
