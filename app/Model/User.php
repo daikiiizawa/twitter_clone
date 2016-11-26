@@ -59,8 +59,8 @@ class User extends AppModel {
         ],
         'body' => [
             'required' => [
-                'rule' => ['notBlank','between', 2, 140],
-                'message' => 'プロフィールは0文字以上110字以下で入力してください。'
+                'rule' => ['between', 2, 140],
+                'message' => 'プロフィールは2文字以上110字以下で入力してください。'
             ],
         ],
         'password' => [

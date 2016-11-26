@@ -109,9 +109,11 @@ class TweetsController extends AppController {
                 return $this->redirect(['action' => 'view',$id]);
             }
         } else {
-            $this->request->data = $this->Tweet->findById($id);
+            $edittweet = $this->Tweet->findById($id);
+            $this->set('edittweet', $edittweet);
         }
-        $this->set('id', null);
+
+        $this->set('id', $id);
     }
 
     public function delete($id = null) {

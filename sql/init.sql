@@ -31,7 +31,7 @@ INSERT INTO `users` (`email`, `name`, `photo`, `photo_dir`, `role`)
 INSERT INTO `users` (`email`, `name`, `photo`, `photo_dir`, `role`)
     VALUES ("huga@huga.com", "hugahuga", "Twitter_icon.png", "3", "author");
 INSERT INTO `users` (`email`, `name`, `photo`, `photo_dir`, `role`)
-    VALUES ("iizawa@mail.com", "iizawa", "Twitter_icon2.png", "4", "author");
+    VALUES ("iizawa@mail.com", "iizawa", "Twitter_icon2.jpeg", "4", "author");
 
 
 -- tweetsテーブル作成
@@ -39,7 +39,7 @@ CREATE TABLE `tweets` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `reply_tweet_id` int(11),
-  `content` varchar(255) NOT NULL,
+  `content` varchar(110) NOT NULL,
   `created` datetime NOT NULL,
   `updated` datetime NOT NULL
 ) ENGINE=InnoDB;

@@ -5,7 +5,7 @@ class Tweet extends AppModel {
     public $validate = [
         'content' => [
             'required' => [
-                'rule' => ['notBlank','between', 2, 140],
+                'rule' => ['between', 2, 140],
                 'message' => '本文は2文字以上140字以下で入力してください。'
             ],
         ]
